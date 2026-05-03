@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/sudarshan ps/Internals_Basics/MLOPs_Lab_CIE/src/mlruns/626384747749078506/100c8eb5ab3147739d511a449f121fbe/artifacts
+end_time: 1777837479143
+entry_point_name: ''
+experiment_id: '626384747749078506'
+lifecycle_stage: active
+run_id: 100c8eb5ab3147739d511a449f121fbe
+run_name: Lasso
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777837473253
+status: 3
+tags: []
+user_id: sudarshan ps

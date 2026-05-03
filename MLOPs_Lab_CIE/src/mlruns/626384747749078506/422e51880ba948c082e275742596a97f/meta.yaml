@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/sudarshan ps/Internals_Basics/MLOPs_Lab_CIE/src/mlruns/626384747749078506/422e51880ba948c082e275742596a97f/artifacts
+end_time: 1777837482856
+entry_point_name: ''
+experiment_id: '626384747749078506'
+lifecycle_stage: active
+run_id: 422e51880ba948c082e275742596a97f
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777837479158
+status: 3
+tags: []
+user_id: sudarshan ps

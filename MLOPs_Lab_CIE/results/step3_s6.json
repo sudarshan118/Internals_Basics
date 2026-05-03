@@ -1,0 +1,7 @@
+{
+    "registered_model_name": "freshbasket-delivery-time-min-predictor",
+    "version": 1,
+    "run_id": "100c8eb5ab3147739d511a449f121fbe",
+    "source_metric": "rmse",
+    "source_metric_value": 14.500067291305747
+}
