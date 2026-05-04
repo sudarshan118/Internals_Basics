@@ -1,40 +1,50 @@
-import os
-os.environ["MLFLOW_TRACKING_URI"] = "file:./mlruns"
-
 import mlflow
+from mlflow import MlflowClient
 import json
+import os
 
-mlflow.set_tracking_uri("file:./mlruns")
-mlflow.set_experiment("freshbasket-delivery-time-min")
+mlflow.set_tracking_uri("file:///C:/Users/sudarshan ps/Internals_Basics/MLOPs_Lab_CIE/mlruns")
 
-model_name = "freshbasket-delivery-time-min-predictor"
+client = MlflowClient()
 
-# Get runs
-runs = mlflow.search_runs()
+# Get the experiment
+experiment = client.get_experiment_by_name("steelforge-production-hours")
+experiment_id = experiment.experiment_id
 
-if runs.empty:
-    print("❌ No runs found — re-run train.py first")
-    exit()
+# Get all runs, find the best one by MAE
+runs = client.search_runs(
+    experiment_ids=[experiment_id],
+    order_by=["metrics.mae ASC"]
+)
 
-# Sort by RMSE
-runs = runs.sort_values("metrics.rmse")
+best_run = runs[0]
+best_run_id = best_run.info.run_id
+best_mae = best_run.data.metrics["mae"]
+best_model_name = best_run.data.tags.get("mlflow.runName", "best_model")
 
-best_run = runs.iloc[0]
-run_id = best_run["run_id"]
+print(f"Best run: {best_run_id} | Model: {best_model_name} | MAE: {best_mae}")
 
-model_uri = f"runs:/{run_id}/model"
+# Register the model
+model_uri = f"runs:/{best_run_id}/model"
+registered_model_name = "steelforge-production-hours-predictor"
 
-result = mlflow.register_model(model_uri, model_name)
+result = mlflow.register_model(model_uri, registered_model_name)
+
+version = result.version
+
+print(f"Registered as version: {version}")
 
 output = {
-    "registered_model_name": model_name,
-    "version": result.version,
-    "run_id": run_id,
-    "source_metric": "rmse",
-    "source_metric_value": float(best_run["metrics.rmse"])
+    "registered_model_name": registered_model_name,
+    "version": int(version),
+    "run_id": best_run_id,
+    "source_metric": "mae",
+    "source_metric_value": round(best_mae, 4)
 }
 
-with open("../results/step3_s6.json", "w") as f:
-    json.dump(output, f, indent=4)
+os.makedirs("results", exist_ok=True)
+with open("results/step3_s6.json", "w") as f:
+    json.dump(output, f, indent=2)
 
-print("Task 3 completed")
+print("\n✅ step3_s6.json saved")
+print(json.dumps(output, indent=2))

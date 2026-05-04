@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/sudarshan ps/Internals_Basics/MLOPs_Lab_CIE/mlruns/792032021436872046/models/m-a369efcb706d4650a9c78a33f5dc7695/artifacts
+creation_timestamp: 1777866924070
+experiment_id: '792032021436872046'
+last_updated_timestamp: 1777866928927
+model_id: m-a369efcb706d4650a9c78a33f5dc7695
+model_type: null
+name: model
+source_run_id: 6640113307ab45468618bdb99b8aac69
+status: 2
+status_message: null

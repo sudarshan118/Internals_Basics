@@ -1,0 +1,12 @@
+{
+  "image_name": "steelforge-predictor",
+  "image_tag": "v1",
+  "base_image": "python:3.12-slim",
+  "test_input": {
+    "batch_size_tons": 23.2,
+    "machine_count": 4,
+    "alloy_grade": 3,
+    "shift_type": 1
+  },
+  "prediction": 8.1613
+}

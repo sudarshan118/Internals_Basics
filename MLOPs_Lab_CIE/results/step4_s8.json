@@ -1,11 +1,11 @@
 {
-    "original_data_rows": 25,
-    "new_data_rows": 20,
-    "combined_data_rows": 45,
-    "champion_rmse": 14.500067291305747,
-    "retrained_rmse": 5.492874279666553,
-    "improvement": 9.007193011639195,
-    "min_improvement_threshold": 0.5,
-    "action": "promoted",
-    "comparison_metric": "rmse"
+  "original_data_rows": 25,
+  "new_data_rows": 20,
+  "combined_data_rows": 45,
+  "champion_mae": 2.1942,
+  "retrained_mae": 1.7505,
+  "improvement": 0.4437,
+  "min_improvement_threshold": 0.5,
+  "action": "kept_champion",
+  "comparison_metric": "mae"
 }

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/sudarshan ps/Internals_Basics/MLOPs_Lab_CIE/mlruns/792032021436872046/6640113307ab45468618bdb99b8aac69/artifacts
+end_time: 1777866928948
+entry_point_name: ''
+experiment_id: '792032021436872046'
+lifecycle_stage: active
+run_id: 6640113307ab45468618bdb99b8aac69
+run_name: Ridge
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777866923962
+status: 3
+tags: []
+user_id: sudarshan ps

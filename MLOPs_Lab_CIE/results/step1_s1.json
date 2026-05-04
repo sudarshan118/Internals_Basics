@@ -1,18 +1,18 @@
 {
-    "experiment_name": "freshbasket-delivery-time-min",
-    "models": [
-        {
-            "name": "Lasso",
-            "mae": 12.532527627237485,
-            "rmse": 14.500067291305747
-        },
-        {
-            "name": "RandomForest",
-            "mae": 13.145159999999981,
-            "rmse": 14.745211660332302
-        }
-    ],
-    "best_model": "Lasso",
-    "best_metric_name": "rmse",
-    "best_metric_value": 14.500067291305747
+  "experiment_name": "steelforge-production-hours",
+  "models": [
+    {
+      "name": "LinearRegression",
+      "mae": 2.2358,
+      "rmse": 2.6963
+    },
+    {
+      "name": "Ridge",
+      "mae": 2.1942,
+      "rmse": 2.7254
+    }
+  ],
+  "best_model": "Ridge",
+  "best_metric_name": "mae",
+  "best_metric_value": 2.1942
 }
